@@ -1,0 +1,31 @@
+services:
+
+  db:
+    image: mysql:latest
+    container_name: mysql-devtools
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: database_devtools
+      MYSQL_USER: selena-hili-or
+      MYSQL_PASSWORD: devtools
+
+  drupal:
+    image: drupal:latest
+    container_name: drupal-devtools
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - drupal_data:/var/www/html
+
+volumes:
+  db_data:
+  drupal_data:
+  
