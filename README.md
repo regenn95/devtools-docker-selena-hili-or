@@ -1,29 +1,95 @@
-## devtools-docker-selena-hili-or
+# Final Project - Docker Infrastructure for Drupal
 
-# Instructions for group
+## a. Who we are
+Hili, Selena, and Or.
 
-**To get the SQL:**
+## b. What we were required to do
+We were tasked with setting up a virtualized environment using Docker to run a Drupal website with a MySQL database. Additionally, we were required to implement automated data backup and restoration mechanisms using Bash scripts.
 
-1. Clone the repository to your device.
-2. Install Docker desktop and enable WSL integration.
-3. In Docker desktop, install Drupal via Docker Hub.
-4. In a Linux environment set the directory to the location of your cloned repository. Enter the following lines:
+## c. What we did
+* Configured a `compose.yaml` file to deploy the website and database services.
+* Installed the Drupal site and populated it with content.
+* Created Bash scripts for full project automation: environment setup, backup, restoration, and complete cleanup.
 
-```docker compose pull``` to extract and
+## d. Technologies we used
+* Docker & Docker Compose
+* Linux Ubuntu (Terminal)
+* Bash Scripting
+* MySQL
+* Drupal
 
-```docker compose up -d``` to run the SQL.
+## e. Step-By-Step User Guide
+To run our project and fully restore the website, follow these steps:
 
-Alternatvely you can run the container in Docker desktop after extraction.
+1. **Clone the repository:**
+   Run the following command in your terminal:# Final Project - Docker Infrastructure for Drupal
 
-**To access Drupal website:**
+## a. Who we are
+Hili, Selena, and Or.
 
-1. Go to your containers and click http://localhost:8080/ in the port column belonging to drupal-devtools.
-2. Login to the site using the administrator account.
+## b. What we were required to do
+We were tasked with setting up a virtualized environment using Docker to run a Drupal website with a MySQL database. Additionally, we were required to implement automated data backup and restoration mechanisms using Bash scripts.
 
-*Username: demoadmin*
+## c. What we did
+* Configured a `compose.yaml` file to deploy the website and database services.
+* Installed the Drupal site and populated it with content.
+* Created Bash scripts for full project automation: environment setup, backup, restoration, and complete cleanup.
 
-*Password: secretpass*
+## d. Technologies we used
+* Docker & Docker Compose
+* Linux Ubuntu (Terminal)
+* Bash Scripting
+* MySQL
+* Drupal
 
-3. With the demoadmin account, create your own account and set role to 'Administrator'. (from People in the sidebar)
-From there we will each be able to make changes to the layout and add additional things.
+## e. Step-By-Step User Guide
+To run our project and fully restore the website, follow these steps:
 
+1. **Clone the repository:**
+   Run the following command in your terminal:
+   `git clone https://github.com/regenn95/devtools-docker-selena-hili-or.git`
+
+2. **Enter the directory:**
+   `cd devtools-docker-selena-hili-or`
+
+3. **Set up the environment:**
+   Run the setup script: 
+   `./setup.sh`
+   *(Note: Wait about 30 seconds after running this command for the database to fully initialize).*
+
+4. **Restore the site data:**
+   Run the restore script to inject the backup data: 
+   `./restore.sh`
+
+5. **Access the website:**
+   Open a web browser and go to `http://localhost:8080`.
+
+6. **Clean up the workspace (when finished):**
+   To completely remove all containers, networks, and data volumes, run: 
+   `./cleanup.sh`
+
+## f. Additional information
+Our scripts automatically handle the connections between containers, ensuring a seamless and full restoration of the website without requiring any manual database interventions.
+   `git clone https://github.com/regenn95/devtools-docker-selena-hili-or.git`
+
+2. **Enter the directory:**
+   `cd devtools-docker-selena-hili-or`
+
+3. **Set up the environment:**
+   Run the setup script: 
+   `./setup.sh`
+   *(Note: Wait about 30 seconds after running this command for the database to fully initialize).*
+
+4. **Restore the site data:**
+   Run the restore script to inject the backup data: 
+   `./restore.sh`
+
+5. **Access the website:**
+   Open a web browser and go to `http://localhost:8080`.
+
+6. **Clean up the workspace (when finished):**
+   To completely remove all containers, networks, and data volumes, run: 
+   `./cleanup.sh`
+
+## f. Additional information
+Our scripts automatically handle the connections between containers, ensuring a seamless and full restoration of the website without requiring any manual database interventions.
